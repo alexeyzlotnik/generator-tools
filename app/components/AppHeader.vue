@@ -5,52 +5,13 @@ const { $csrfFetch } = useNuxtApp()
 
 const { loggedIn, session, user } = useUserSession()
 
-const links = computed<HeaderLink[]>(() => {
-  const links: HeaderLink[] = []
-
-  if (loggedIn.value) {
-    links.push({
-      label: 'Dashboard',
-      to: '/dashboard',
-    })
-  }
-
-  return links
-})
-
-const items = [
-  [
-    {
-      label: 'Profile',
-      to: '/profile',
-      icon: 'i-ph-user-duotone',
-    },
-  ],
-  [
-    {
-      label: 'Logout',
-      icon: 'i-ph-sign-out-duotone',
-      click: async () => {
-        await $csrfFetch('/api/_auth/session', {
-          method: 'DELETE',
-        })
-
-        session.value = {}
-
-        await navigateTo('/')
-      },
-    },
-  ],
-]
-
-const title = useRuntimeConfig().app.name
+const title = useAppConfig().app.name;
 const icon = useAppConfig().app.logo
 </script>
 
 <template>
   <UHeader
     :title
-    :links="links"
     :ui="{ logo: 'items-center' }"
   >
     <template #logo>
@@ -64,6 +25,10 @@ const icon = useAppConfig().app.logo
     </template>
 
     <template #right>
+      <!-- <UColorModeToggle /> -->
+    </template>
+
+    <!-- <template #right>
       <template v-if="loggedIn && user">
         <UDropdown
           :items="items"
@@ -95,6 +60,6 @@ const icon = useAppConfig().app.logo
           Register
         </UButton>
       </template>
-    </template>
+    </template> -->
   </UHeader>
 </template>

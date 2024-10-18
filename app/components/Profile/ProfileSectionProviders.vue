@@ -3,6 +3,8 @@ import type { FetchError } from 'ofetch'
 
 const { user } = useUserSession()
 
+console.log(user.value)
+
 const isTwitchConnected = computed(() => Boolean(user.value?.twitchId))
 const isGithubConnected = computed(() => Boolean(user.value?.githubId))
 

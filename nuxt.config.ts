@@ -66,7 +66,7 @@ export default defineNuxtConfig({
     methodsToProtect: ['POST', 'PUT', 'PATCH', 'DELETE'],
   },
   colorMode: {
-    preference: 'system',
+    preference: 'light',
   },
   eslint: {
     config: {

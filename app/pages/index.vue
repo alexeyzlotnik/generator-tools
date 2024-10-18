@@ -1,8 +1,8 @@
 <script lang="ts" setup>
-const description = 'Gavarnie is a modern and flexible SaaS template for Nuxt and NuxtHub that can be used to build any application.'
+const description = 'Test description here'
 
 useSeoMeta({
-  title: 'Gavarnie - Modern SaaS Template for Nuxt and NuxtHub',
+  title: 'Generator Tools',
   description,
 })
 </script>
