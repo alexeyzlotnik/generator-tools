@@ -67,6 +67,22 @@
             </UButton>
          </div>
       </UCard>
+      <!-- 3 generated password examples -->
+      <div class="generated-passwords flex flex-col gap-3 w-full md:w-2/3 mx-auto">
+         <h2 class="text-2xl font-bold text-center">Password Examples</h2>
+         <div class="generated-password flex gap-3 items-center justify-center bg-gray-100 dark:bg-gray-800 rounded-lg p-3" v-for="password in passwordExamples" :key="password">
+            <p>{{ password }}</p>
+            <!-- copy button -->
+            <UTooltip text="Copy">
+               <UButton
+                  variant="link"
+                  icon="i-iconamoon:copy-light"
+                  :padded="false"
+                  @click="copyPassword(password)"
+               />
+            </UTooltip>
+         </div>
+      </div>
    </div>
 </template>
 
@@ -75,6 +91,7 @@ import { ref } from 'vue'
 const toast = useToast()
 
 const password = ref('')
+const passwordExamples = ref([])
 
 const settings = ref({
    passwordLength: 16,
@@ -100,6 +117,18 @@ const passwordComplexity = computed(() => {
    return complexity
 })
 
+function createPassword() {
+   password.value = generatePassword()
+}
+
+function createPasswordExamples() {
+   passwordExamples.value = []
+
+   for (let i = 0; i < 3; i++) {
+      let generatedPassword = generatePassword()
+      passwordExamples.value.push(generatedPassword)
+   }
+}
 
 function generatePassword() {
   const length = settings.value.passwordLength;
@@ -127,7 +156,7 @@ function generatePassword() {
   }
 
   // Set the generated password
-  password.value = generatedPassword;
+  return generatedPassword;
 }
 
 function copyPassword() {
@@ -145,10 +174,12 @@ watch(settings.passwordLength, () => {
 })
 
 watch(settings, () => {
-   generatePassword()
+   createPassword()
+   createPasswordExamples()
 }, { deep: true })
 
 onMounted(() => {
-   generatePassword()
+   createPassword()
+   createPasswordExamples()
 })
 </script>
