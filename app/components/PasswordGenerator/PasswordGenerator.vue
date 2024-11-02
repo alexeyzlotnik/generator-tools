@@ -78,7 +78,7 @@
                   variant="link"
                   icon="i-iconamoon:copy-light"
                   :padded="false"
-                  @click="copyPassword(password)"
+                  @click="copyPassword"
                />
             </UTooltip>
          </div>
