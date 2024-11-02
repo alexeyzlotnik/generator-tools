@@ -1,10 +1,11 @@
 export default defineAppConfig({
   ui: {
-    primary: 'green',
-    gray: 'stone',
+    primary: 'orange',
+    gray: '#12181d',
   },
   app: {
-    logo: '/favicon.ico',
+    logo: '/images/logo.png',
+    name: 'Generator Tools'
   },
   footer: {
     notice: 'A Starter Template by Estéban "Barbapapazes"',
