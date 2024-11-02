@@ -2,7 +2,7 @@
 const description = 'Free online tools for developers and marketers - UTM Generator and Password Generator'
 
 useSeoMeta({
-  title: 'Generator Tools',
+  title: 'Tool Farm',
   description,
 })
 
