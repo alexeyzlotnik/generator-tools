@@ -330,7 +330,7 @@ function generateWordCloud() {
   }
 
   let split = splitByWords.value ? ' ' : ', '
-  let replace = splitByWords.value ? /[.,\/#!$%^&*;:{}=`~()]/g : /[.\/#!$%^&*;:{}=`~()]/g
+  let replace = splitByWords.value ? /[.,#!$%^&*;:{}=`~()]/g : /[.#!$%^&*;:{}=`~()]/g
 
   let cleanedText = props.data
     .toLowerCase()
