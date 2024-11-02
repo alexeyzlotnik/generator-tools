@@ -7,8 +7,8 @@
         :ui="{title: 'md:text-center w-full', description: 'md:text-center w-full', wrapper: 'border-0'}"
       />
       <UPageBody class="flex flex-col gap-12">
-        <WordcloudGenerator/>
-        <UDivider label="Learn more about wordcloud generation" />
+        <UTMGenerator/>
+        <UDivider label="Learn more about UTM generation" />
         <!-- <WordcloudGeneratorSEO /> -->
       </UPageBody>
     </UPage>
