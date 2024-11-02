@@ -201,7 +201,20 @@ import _ from 'lodash'
 import VueWordCloud from 'vuewordcloud'
 import { ref, onMounted } from 'vue'
 
-const props = defineProps(['data', 'stopWords', 'closeEnabled'])
+const props = defineProps({
+  data: {
+    type: String,
+    required: true
+  },
+  stopWords: {
+    type: Array,
+    default: () => []
+  },
+  closeEnabled: {
+    type: Boolean,
+    default: false
+  }
+})
 
 const progress = ref(null)
 const removeStopWords = ref(true)
@@ -213,8 +226,6 @@ const menu = ref({
   options: []
 })
 
-const showCustomColor = ref(false)
-const showCustomBgColor = ref(false)
 const wordCloud = ref({
   visible: true,
   words: [],

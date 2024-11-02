@@ -17,7 +17,7 @@
             </UButtonGroup>
          </template>
          <UForm class="w-full flex flex-col gap-5 justify-between items-start" v-model="settings">
-            <div class="flex flex-col w-full gap-2" v-for="field in utm">
+            <div class="flex flex-col w-full gap-2" v-for="field in utm" :key="field.id">
                <div class="flex w-full">
                   <label :for="field.id" class="bg-gray-100 p-2 rounded-l whitespace-nowrap border w-28 md:w-40 min-w-28 md:min-w-40 text-sm md:text-base flex items-center">{{ field.label }}</label>
                   <UInput
