@@ -4,43 +4,30 @@ export default defineAppConfig({
     gray: '#12181d',
   },
   app: {
-    logo: '/images/logo.png',
-    name: 'Generator Tools'
+    logo: '/images/tool-farm.png',
+    name: 'Tool Farm'
   },
   footer: {
-    notice: 'A Starter Template by Estéban "Barbapapazes"',
     smallLinks: [
-      {
-        label: 'Privacy Policy',
-        to: '/privacy',
-      },
-      {
-        label: 'Terms of Service',
-        to: '/terms',
-      },
+      // {
+      //   label: 'Privacy Policy',
+      //   to: '/privacy',
+      // },
+      // {
+      //   label: 'Terms of Service',
+      //   to: '/terms',
+      // },
       {
         label: 'Contact',
-        to: 'mailto:esteban@soubiran.dev',
+        to: 'mailto:alexeyzlotnik@gmail.com?subject=Tool%20Farm',
       },
     ],
   },
   socials: [
     {
-      title: 'GitHub',
-      icon: 'i-simple-icons-github',
-      to: 'https://github.com/barbapapazes/gavarnie',
-      target: '_blank',
-    },
-    {
-      title: 'X',
-      icon: 'i-simple-icons-x',
-      to: 'https://x.soubiran.dev',
-      target: '_blank',
-    },
-    {
-      title: 'LinkedIn',
-      icon: 'i-simple-icons-linkedin',
-      to: 'https://linkedin.soubiran.dev',
+      title: 'Made with ❤️ by Alexey Zlotnik',
+      // icon: 'i-simple-line-icons:link',
+      to: 'https://zlotnik.website',
       target: '_blank',
     },
   ],
