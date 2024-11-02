@@ -7,6 +7,17 @@ const { loggedIn, session, user } = useUserSession()
 
 const title = useAppConfig().app.name;
 const icon = useAppConfig().app.logo
+
+const links: HeaderLink[] = [
+  { label: 'Home', to: '/' },
+  {
+    label: 'Tools',
+    children: [
+      { label: 'UTM Generator', to: 'utm-generator' },
+      { label: 'Password Generator', to: 'password-generator' }
+    ]
+  }
+]
 </script>
 
 <template>
@@ -24,42 +35,8 @@ const icon = useAppConfig().app.logo
       <span> {{ title }} </span>
     </template>
 
-    <template #right>
-      <!-- <UColorModeToggle /> -->
+    <template #center>
+      <UHeaderLinks :links="links" />
     </template>
-
-    <!-- <template #right>
-      <template v-if="loggedIn && user">
-        <UDropdown
-          :items="items"
-          :popper="{ placement: 'bottom-end' }"
-        >
-          <UButton
-            color="gray"
-            aria-label="Profile picture of connected user"
-            variant="ghost"
-            square
-          >
-            <AppAvatar :src="user.avatar" />
-          </UButton>
-        </UDropdown>
-      </template>
-      <template v-else>
-        <UButton
-          to="/login"
-          color="gray"
-          variant="ghost"
-        >
-          Login
-        </UButton>
-        <UButton
-          to="/register"
-          color="black"
-          variant="solid"
-        >
-          Register
-        </UButton>
-      </template>
-    </template> -->
   </UHeader>
 </template>

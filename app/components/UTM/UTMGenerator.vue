@@ -54,35 +54,35 @@ const utm = ref([
       label: 'URL',
       value: '',
       placeholder: 'https://www.example.com',
-      description: 'The URL to generate UTM links for'
+      description: 'The destination URL you want to track. Example: https://yourwebsite.com/landing-page'
    },
    {
       id: 'utm_source',
       label: 'UTM Source',
       value: '',
-      placeholder: 'utm_source',
-      description: 'The source of the UTM link'
+      placeholder: 'facebook, google, newsletter',
+      description: 'Identifies where the traffic comes from. Examples: facebook, google, newsletter, linkedin, twitter, instagram'
    },
    {
       id: 'utm_medium',
       label: 'UTM Medium',
       value: '',
-      placeholder: 'utm_medium',
-      description: 'The medium of the UTM link'
+      placeholder: 'cpc, social, email',
+      description: 'The marketing medium or channel type. Examples: cpc (paid search), social (organic social), email, banner, affiliate'
    },
    {
       id: 'utm_campaign',
       label: 'UTM Campaign',
       value: '',
-      placeholder: 'utm_campaign',
-      description: 'The campaign of the UTM link'
+      placeholder: 'spring_sale_2024',
+      description: 'Name of your specific campaign or promotion. Examples: black_friday, product_launch, summer_collection_2024'
    },
    {
       id: 'utm_term',
       label: 'UTM Term',
       value: '',
-      placeholder: 'utm_term',
-      description: 'The term of the UTM link'
+      placeholder: 'blue_shoes',
+      description: 'Keywords for paid search or terms you want to track. Optional. Examples: running_shoes, marketing_tools, best_deals'
    }
 ])
 

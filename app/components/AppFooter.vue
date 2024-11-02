@@ -1,10 +1,10 @@
 <script lang="ts" setup>
-const title = useRuntimeConfig().app.name
 
 const appConfig = useAppConfig()
-const notice = appConfig.footer.notice
+const title = appConfig.app.name
 const smallLinks = appConfig.footer.smallLinks
 const socials = appConfig.socials
+const currentYear = new Date().getFullYear()
 </script>
 
 <template>
@@ -13,7 +13,7 @@ const socials = appConfig.socials
     :ui="{ bottom: { left: 'text-sm text-gray-600 dark:text-gray-300' } }"
   >
     <template #left>
-      {{ title }} - {{ notice }}
+      {{ title }} - {{ currentYear }}
     </template>
 
     <template #right>
@@ -24,7 +24,9 @@ const socials = appConfig.socials
         color="gray"
         variant="ghost"
         v-bind="social"
-      />
+      >
+        {{ social.title }}
+      </UButton>
     </template>
   </UFooter>
 </template>
