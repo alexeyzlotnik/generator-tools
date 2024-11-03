@@ -10,7 +10,7 @@
                   icon="i-heroicons:arrow-path-solid"
                   :padded="false"
                   class="cursor-pointer absolute top-1/2 right-3 transform -translate-y-1/2"
-                  @click="generatePassword"
+                  @click="regeneratePassword"
                />
             </UTooltip>
             <UTooltip text="Copy">
@@ -117,6 +117,11 @@ const passwordComplexity = computed(() => {
    return complexity
 })
 
+function regeneratePassword() {
+   createPassword()
+   createPasswordExamples()
+}
+
 function createPassword() {
    password.value = generatePassword()
 }
@@ -174,12 +179,24 @@ watch(settings.passwordLength, () => {
 })
 
 watch(settings, () => {
-   createPassword()
-   createPasswordExamples()
+   regeneratePassword()
 }, { deep: true })
 
+watch(
+  () => settings.value.rules,
+  (rules) => {
+    // If no rules are enabled, force lowercase to be true
+    if (!rules.some(rule => rule.state)) {
+      const lowercaseRule = rules.find(rule => rule.label === 'Lowercase');
+      if (lowercaseRule) {
+        lowercaseRule.state = true;
+      }
+    }
+  },
+  { deep: true }
+)
+
 onMounted(() => {
-   createPassword()
-   createPasswordExamples()
+   regeneratePassword()
 })
 </script>
