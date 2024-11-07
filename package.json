@@ -21,6 +21,7 @@
     "lodash": "^4.17.21",
     "nuxt": "^3.12.4",
     "nuxt-auth-utils": "^0.3.4",
+    "nuxt-gtag": "^3.0.1",
     "nuxt-security": "2.0.0-rc.9",
     "resend": "^4.0.0",
     "uncrypto": "^0.1.3",

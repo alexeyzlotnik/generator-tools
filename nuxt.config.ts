@@ -3,13 +3,7 @@ const isProd = process.env.NODE_ENV === 'production'
 export default defineNuxtConfig({
   compatibilityDate: '2024-04-03',
   extends: ['@nuxt/ui-pro'],
-  modules: [
-    '@nuxt/eslint',
-    '@nuxthub/core',
-    'nuxt-auth-utils',
-    '@nuxt/ui',
-    'nuxt-security',
-  ],
+  modules: ['@nuxt/eslint', '@nuxthub/core', 'nuxt-auth-utils', '@nuxt/ui', 'nuxt-security', 'nuxt-gtag'],
   routeRules: {
     '/api/me': {
       security: {
@@ -77,4 +71,8 @@ export default defineNuxtConfig({
     compatibilityVersion: 4,
   },
   devtools: { enabled: true },
+  gtag: {
+    enabled: process.env.NODE_ENV === 'production',
+    id: 'G-TVCD376VGN'
+  }
 })
