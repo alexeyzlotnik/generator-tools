@@ -51,7 +51,7 @@ export default defineNuxtConfig({
     headers: {
       contentSecurityPolicy: {
         'img-src': ['\'self\'', 'data:', 'https://avatars.githubusercontent.com', 'https://static-cdn.jtvnw.net/'],
-        'script-src': ['\'self\'', 'https', '\'nonce-{{nonce}}\'', 'https://static.cloudflareinsights.com'],
+        'script-src': ['\'self\'', 'https', '\'nonce-{{nonce}}\'', 'https://static.cloudflareinsights.com', 'https://www.googletagmanager.com'],
       },
       crossOriginEmbedderPolicy: isProd ? 'credentialless' : false,
     },
